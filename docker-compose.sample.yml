@@ -409,6 +409,8 @@ services:
     container_name: jaeger
     environment:
       - TZ=${TZ}
+    volumes:
+      - ./jaeger/data:/tmp
     ports:
       - "${JAEGER_PORT}:16686"
       - "${JAEGER_THRIFT_PORT}:14268"
